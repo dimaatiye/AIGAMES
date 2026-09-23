@@ -2,6 +2,7 @@
 #include "main.h"
 #include "Player.h"
 #include "NPC.h"
+#include "WanderNPC.h"
 int main()
 {
 	srand(static_cast<unsigned int>(time(nullptr)));
@@ -15,8 +16,9 @@ int main()
 	NPCTexture.loadFromFile("Graphics/alien.png");
 	NPC NPC(NPCTexture);
 
-
-
+	sf::Texture WanderTexture;
+	WanderTexture.loadFromFile("Graphics/sc.png");
+	WanderNPC WanderNPC(WanderTexture);
 
 	while (window.isOpen())
 	{
@@ -32,7 +34,7 @@ int main()
 		NPC.update();
 		player.draw(window);
 		NPC.draw(window);
-
+		WanderNPC.draw(window);
 		window.display();
 	}
 }
