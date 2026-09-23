@@ -8,6 +8,7 @@ class WanderNPC
 	float wanderRate;
 	float maxAcceleration;
 	float wanderRadius;
+	float wanderOffset;
 public:
 	WanderNPC(sf::Texture& WanderTexture);
 	void update();
