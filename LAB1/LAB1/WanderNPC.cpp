@@ -75,8 +75,16 @@ void WanderNPC::updateW()
 		velocityW.y = -velocityW.y;
 
 	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num1))
+	{
+		isVisible = false;
+	}
+	else if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num2)))
+		isVisible = true;
 }
 void WanderNPC::draw(sf::RenderWindow& window)
 {
+	if (isVisible)
 	window.draw(WanderSprite);
 }

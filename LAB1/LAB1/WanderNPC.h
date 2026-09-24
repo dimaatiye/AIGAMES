@@ -13,6 +13,7 @@ class WanderNPC
 	float maxSpeed = 200.0f;
 	sf::Clock clockW;
 	sf::FloatRect bounds;
+	bool isVisible = true;
 public:
 	WanderNPC(sf::Texture& WanderTexture);
 	void updateW();
