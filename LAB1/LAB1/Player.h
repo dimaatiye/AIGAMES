@@ -14,5 +14,7 @@ public:
 	Player(sf::Texture& PlayerTexture);
 	void update();
 	void draw(sf::RenderWindow& window);
+	sf::Vector2f getPosition();
+
 };
 

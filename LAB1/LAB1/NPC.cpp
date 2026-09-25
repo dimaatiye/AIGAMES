@@ -14,9 +14,9 @@ NPC::NPC(sf::Texture& NPCTexture)
 	velocity = { speedx, speedy };
 }
 
-void NPC::update()
+void NPC::update(Player& player)
 {
-	NPCSprite.move(velocity);
+	sf::Vector2f playerPosition = player.getPosition();
 
 	sf::Vector2u windowSize = { 900, 900 };
 	sf::FloatRect bounds = NPCSprite.getGlobalBounds();
@@ -32,8 +32,13 @@ void NPC::update()
 	{
 		velocity.y = -velocity.y;
 	}
+	
 }
 void NPC::draw(sf::RenderWindow& window)
 {
 	window.draw(NPCSprite);
+}
+
+void NPC::setTargetPosition(const sf::Vector2f& target)
+{
 }

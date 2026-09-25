@@ -1,4 +1,5 @@
 #pragma once
+#include "Player.h"
 #include <SFML/Graphics.hpp>
 class NPC
 {
@@ -11,9 +12,14 @@ private:
 	float posX;
 	float posY;
 	float orientationW;
+	sf::Vector2f targetPosition{ 450.f, 450.f }; 
+	float orientationN = 0.f;
+	float maxSpeed = 3.f; 
+
 public:
 	NPC(sf::Texture& NPCTexture);
-	void update();
+	void update(Player& player);
 	void draw(sf::RenderWindow& window);
+	void setTargetPosition(const sf::Vector2f& target);
 };
 
