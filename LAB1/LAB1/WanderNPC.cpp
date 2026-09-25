@@ -7,7 +7,7 @@ WanderNPC::WanderNPC(sf::Texture& WanderTexture) :WanderSprite(WanderTexture)
 	bounds = WanderSprite.getLocalBounds();
 	WanderSprite.setOrigin({ bounds.size.x / 2.f, bounds.size.y / 2.f }); // rotate around the centre
 
-	WanderSprite.setPosition({ 100, 400 });
+	WanderSprite.setPosition({ 400, 400 });
 }
 void WanderNPC::updateW()
 {

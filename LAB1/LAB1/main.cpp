@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "NPC.h"
 #include "WanderNPC.h"
+#include "ArriveNPC.h"
 int main()
 {
 	srand(static_cast<unsigned int>(time(nullptr)));
@@ -19,6 +20,10 @@ int main()
 	sf::Texture WanderTexture;
 	WanderTexture.loadFromFile("Graphics/sc.png");
 	WanderNPC WanderNPC(WanderTexture);
+
+	sf::Texture ArriveTexture;
+	ArriveTexture.loadFromFile("Graphics/sc2.png");
+	//ArriveNPC Arrive(ArriveTexture);
 
 	while (window.isOpen())
 	{

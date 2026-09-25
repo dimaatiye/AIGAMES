@@ -27,6 +27,9 @@
     <ClInclude Include="WanderNPC.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ArriveNPC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -39,6 +42,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="WanderNPC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ArriveNPC.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -40,8 +40,16 @@ void NPC::update(Player& player)
 	}
 	velocity = direction * maxSpeed;
 	NPCSprite.move(velocity);
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num2))
+	{
+		isVisible = false;
+	}
+	else if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num1)))
+		isVisible = true;
 }
 void NPC::draw(sf::RenderWindow& window)
 {
-	window.draw(NPCSprite);
+	if (isVisible)
+		window.draw(NPCSprite);
 }

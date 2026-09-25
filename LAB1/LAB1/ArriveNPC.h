@@ -1,25 +1,25 @@
 #pragma once
-#include "Player.h"
 #include <SFML/Graphics.hpp>
-class NPC
+#include "Player.h"
+class ArriveNPC
 {
 private:
-	sf::Sprite NPCSprite;
+	sf::Sprite ArriveSprite;
 	sf::Vector2f velocity;
-	float speedxnpc = 0.01f;
-	float speedynpc = 0.01f;
+	float speedxA = 0.01f;
+	float speedyA = 0.01f;
 	float rotationSpeed = 2.0f;
 	float posX;
 	float posY;
-	float orientationN = 0.f;
-	float maxSpeed = 0.02f; 
+	float orientationA = 0.f;
+	float maxSpeed = 0.02f;
 	sf::Vector2f direction;
 	bool isVisible = true;
 
+
 public:
-	NPC(sf::Texture& NPCTexture);
+	ArriveNPC(sf::Texture& ArriveTexture);
 	void update(Player& player);
 	void draw(sf::RenderWindow& window);
-	//void setTargetPosition(const sf::Vector2f& target);
 };
 
