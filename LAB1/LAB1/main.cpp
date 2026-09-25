@@ -31,7 +31,7 @@ int main()
 		}
 		window.clear(sf::Color::White);
 		player.update();
-		NPC.update();
+		NPC.update(player);
 		WanderNPC.updateW();
 		player.draw(window);
 		NPC.draw(window);

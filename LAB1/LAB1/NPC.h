@@ -14,12 +14,12 @@ private:
 	float orientationW;
 	sf::Vector2f targetPosition{ 450.f, 450.f }; 
 	float orientationN = 0.f;
-	float maxSpeed = 3.f; 
-
+	float maxSpeed = 0.02f; 
+	sf::Vector2f direction;
 public:
 	NPC(sf::Texture& NPCTexture);
 	void update(Player& player);
 	void draw(sf::RenderWindow& window);
-	void setTargetPosition(const sf::Vector2f& target);
+	//void setTargetPosition(const sf::Vector2f& target);
 };
 
