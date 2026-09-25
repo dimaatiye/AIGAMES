@@ -6,7 +6,7 @@ NPC::NPC(sf::Texture& NPCTexture)
 	posY = static_cast<float>(rand() % 800);
 
 	NPCSprite.setPosition({ 100, 100 });
-	NPCSprite.setScale({ 0.15,0.15 });
+	NPCSprite.setScale({ 0.055,0.055 });
 
 	//speedx = (rand() % 61 - 30) / 1000.0f; 
 	//speedy = (rand() % 61 - 30) / 1000.0f;

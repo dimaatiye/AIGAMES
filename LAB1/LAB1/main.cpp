@@ -14,7 +14,7 @@ int main()
 	Player player(PlayerTexture);
 
 	sf::Texture NPCTexture;
-	NPCTexture.loadFromFile("Graphics/alien.png");
+	NPCTexture.loadFromFile("Graphics/alien2.png");
 	NPC NPC(NPCTexture);
 
 	sf::Texture WanderTexture;
@@ -22,8 +22,15 @@ int main()
 	WanderNPC WanderNPC(WanderTexture);
 
 	sf::Texture ArriveTexture;
-	ArriveTexture.loadFromFile("Graphics/sc2.png");
-	//ArriveNPC Arrive(ArriveTexture);
+	ArriveTexture.loadFromFile("Graphics/alien.png");
+	ArriveNPC Arrive1(ArriveTexture);
+	Arrive1.setPosition({ 300,300 });
+	Arrive1.setMaxSpeed(200.0F);
+	sf::Texture ArriveTexture2;
+	ArriveTexture2.loadFromFile("Graphics/alien.png"); 
+	ArriveNPC Arrive2(ArriveTexture2);
+	Arrive2.setPosition({ 600, 600 });
+	Arrive2.setMaxSpeed(80.f);
 
 	while (window.isOpen())
 	{
@@ -34,13 +41,17 @@ int main()
 				window.close();
 			}
 		}
-		window.clear(sf::Color::White);
+		window.clear(sf::Color::Black);
 		player.update();
 		NPC.update(player);
 		WanderNPC.updateW();
+		Arrive1.update(player);
+		Arrive2.update(player);
 		player.draw(window);
 		NPC.draw(window);
 		WanderNPC.draw(window);
+		Arrive1.draw(window);
+		Arrive2.draw(window);
 		window.display();
 	}
 }
