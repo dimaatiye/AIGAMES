@@ -20,26 +20,26 @@ void GroupNPC::update()
 	GroupNPCSprite.move(velocity);
 	sf::FloatRect bounds = GroupNPCSprite.getGlobalBounds();
 	sf::Vector2f position = GroupNPCSprite.getPosition();
-	if (bounds.position.x + bounds.size.x > 900)
+	if (bounds.position.x + bounds.size.x > maxscreen)
 	{
-		GroupNPCSprite.setPosition({ 900 - bounds.size.x, position.y });
+		GroupNPCSprite.setPosition({ maxscreen - bounds.size.x, position.y });
 		velocity.x = -velocity.x;
 	}
-	if (bounds.position.y < 0)
+	if (bounds.position.y < minscreen)
 	{
-		GroupNPCSprite.setPosition({ position.x, 0 });
+		GroupNPCSprite.setPosition({ position.x, minscreen });
 		velocity.y = -velocity.y;
 	}
 
-	if (bounds.position.y + bounds.size.y > 900)
+	if (bounds.position.y + bounds.size.y > maxscreen)
 	{
-		GroupNPCSprite.setPosition({ position.x, 900 - bounds.size.y });
+		GroupNPCSprite.setPosition({ position.x, maxscreen - bounds.size.y });
 		velocity.y = -velocity.y;
 	}
 
-	if (bounds.position.x < 0)
+	if (bounds.position.x < minscreen)
 	{
-		GroupNPCSprite.setPosition({ 0, position.y });
+		GroupNPCSprite.setPosition({ minscreen, position.y });
 		velocity.x = -velocity.x;//bounce back
 	}
 }
