@@ -3,8 +3,8 @@
 class WanderNPC
 {private :
 	sf::Sprite WanderSprite;
-	float orientationW = 0.0f;;
-	float wanderOrientation = 0.0f;;
+	float orientationW = 0.0f;; // currecnt orientaton
+	float wanderOrientation = 0.0f;; // random direction change
 	float wanderRate = 0.1f;;
 	float maxAcceleration = 200.0f;
 	float wanderRadius = 50.0f;

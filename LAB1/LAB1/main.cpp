@@ -4,6 +4,7 @@
 #include "NPC.h"
 #include "WanderNPC.h"
 #include "ArriveNPC.h"
+#include "GroupNPC.h"
 int main()
 {
 	srand(static_cast<unsigned int>(time(nullptr)));
@@ -23,6 +24,11 @@ int main()
 
 	sf::Texture ArriveTexture;
 	ArriveTexture.loadFromFile("Graphics/alien.png");
+
+	sf::Texture GroupTexture;
+	GroupTexture.loadFromFile("Graphics/groupe.png");
+	GroupNPC GroupNPC(GroupTexture);
+
 	ArriveNPC Arrive1(ArriveTexture);
 	Arrive1.setPosition({ 300,300 });
 	Arrive1.setMaxSpeed(200.0F);
@@ -43,15 +49,18 @@ int main()
 		}
 		window.clear(sf::Color::Black);
 		player.update();
-		NPC.update(player);
-		WanderNPC.updateW();
-		Arrive1.update(player);
-		Arrive2.update(player);
+		//NPC.update(player);
+		//WanderNPC.updateW();
+		//Arrive1.update(player);
+		//Arrive2.update(player);
+		GroupNPC.update();
 		player.draw(window);
-		NPC.draw(window);
-		WanderNPC.draw(window);
-		Arrive1.draw(window);
-		Arrive2.draw(window);
+		//NPC.draw(window);
+		//WanderNPC.draw(window);
+		//Arrive1.draw(window);
+		//Arrive2.draw(window);
+		GroupNPC.draw(window);
+
 		window.display();
 	}
 }

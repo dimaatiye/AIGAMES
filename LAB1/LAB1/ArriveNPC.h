@@ -16,7 +16,7 @@ private:
 	sf::Vector2f direction;
 	bool isVisible = true;
 	float timeToTarget = 0.25f;
-	float raduis = 10.0f;
+	float raduis = 100.0f;
 	sf::Clock clock;
 
 public:

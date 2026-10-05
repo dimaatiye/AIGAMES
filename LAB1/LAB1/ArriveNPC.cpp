@@ -24,10 +24,7 @@ void ArriveNPC::update(Player& player)
     {
         velocity /= timeToTarget;
 
-        float speed = std::sqrt(
-            velocity.x * velocity.x +
-            velocity.y * velocity.y
-        );
+        float speed = std::sqrt(velocity.x * velocity.x + velocity.y * velocity.y);
 
         if (speed > maxSpeed)
         {

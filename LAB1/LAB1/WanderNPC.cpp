@@ -22,8 +22,8 @@ void WanderNPC::updateW()
 
 	// lecture: target = my.position + wanderOffset * my.orientation.asVector()
 	sf::Vector2f facing(std::cos(orientationW), std::sin(orientationW));
+	//sf::Vector2f circleCentre = { 400 , 400};
 	sf::Vector2f circleCentre = WanderSprite.getPosition() + wanderOffset * facing;
-
 	sf::Vector2f targetFacing(std::cos(targetOrientation), std::sin(targetOrientation));
 	sf::Vector2f target = circleCentre + wanderRadius * targetFacing;
 
@@ -32,7 +32,7 @@ void WanderNPC::updateW()
 
 	float rotationDiff = std::atan2(std::sin(desiredOrientation - orientationW),std::cos(desiredOrientation - orientationW));
 
-	float maxRotation = 1.5f * dt; 
+	float maxRotation = 0.3f * dt; 
 	if (rotationDiff > maxRotation)
 	{
 		rotationDiff = maxRotation;
