@@ -1,4 +1,5 @@
 #include "GroupNPC.h"
+
 GroupNPC::GroupNPC(sf::Texture& GroupTexture)
 	:GroupNPCSprite(GroupTexture)
 {
@@ -6,12 +7,12 @@ GroupNPC::GroupNPC(sf::Texture& GroupTexture)
 	posX = static_cast<float>(rand() % 800);
 	posY = static_cast<float>(rand() % 800);
 
-	GroupNPCSprite.setScale({ 0.1f , 0.1f });
+	GroupNPCSprite.setScale({ scale , scale });
 	GroupNPCSprite.setPosition({ posX, posY });
 	GroupNPCSprite.setRotation(sf::degrees(0));
 
-	speedx = (rand() % 61 - 30) / 1000.0f; //ranges from -0.030 to 0.030
-	speedy = (rand() % 61 - 30) / 1000.0f;
+	speedx = randomPos;
+	speedy = randomPos;
 
 	velocity = { speedx, speedy };
 }
@@ -46,4 +47,8 @@ void GroupNPC::update()
 void GroupNPC::draw(sf::RenderWindow& window)
 {
 	window.draw(GroupNPCSprite);
+}
+
+void GroupNPC::flock(std::vector<GroupNPC>& npcFlock)
+{
 }

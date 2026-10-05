@@ -5,8 +5,11 @@
 #include "WanderNPC.h"
 #include "ArriveNPC.h"
 #include "GroupNPC.h"
+#include <vector>
 int main()
 {
+	bool flocking = false;
+
 	srand(static_cast<unsigned int>(time(nullptr)));
 	sf::RenderWindow window(sf::VideoMode({ 900, 900 }), "LAB1 AIGAMES");
 	
@@ -27,7 +30,11 @@ int main()
 
 	sf::Texture GroupTexture;
 	GroupTexture.loadFromFile("Graphics/groupe.png");
-	GroupNPC GroupNPC(GroupTexture);
+	std::vector<GroupNPC> npcFlock;
+	for (int i = 0; i < 50; i++)
+	{
+		npcFlock.emplace_back(GroupTexture);
+	}
 
 	ArriveNPC Arrive1(ArriveTexture);
 	Arrive1.setPosition({ 300,300 });
@@ -38,6 +45,11 @@ int main()
 	Arrive2.setPosition({ 600, 600 });
 	Arrive2.setMaxSpeed(80.f);
 
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::F))
+	{
+		flocking = true;
+
+	}
 	while (window.isOpen())
 	{
 		while (const std::optional event = window.pollEvent())
@@ -53,14 +65,24 @@ int main()
 		//WanderNPC.updateW();
 		//Arrive1.update(player);
 		//Arrive2.update(player);
-		GroupNPC.update();
 		player.draw(window);
 		//NPC.draw(window);
 		//WanderNPC.draw(window);
 		//Arrive1.draw(window);
 		//Arrive2.draw(window);
-		GroupNPC.draw(window);
+		for (auto& npc : npcFlock)
+		{
+			if (flocking)
+			{
+				npc.flock(npcFlock);
+			}
+			else
+			{
+				npc.update();
 
+			}
+			npc.draw(window);
+		}
 		window.display();
 	}
 }
